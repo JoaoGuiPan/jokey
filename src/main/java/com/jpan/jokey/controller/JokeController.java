@@ -1,5 +1,6 @@
 package com.jpan.jokey.controller;
 
+import com.jpan.jokey.controller.dto.ErrorResponseDto;
 import com.jpan.jokey.exception.InvalidJokeFlagConfigException;
 import com.jpan.jokey.exception.InvalidJokeResponseException;
 import com.jpan.jokey.service.JokeService;
@@ -32,8 +33,8 @@ public class JokeController {
     }
 
     @ExceptionHandler({ InvalidJokeFlagConfigException.class, InvalidJokeResponseException.class })
-    public ResponseEntity<String> handleCustomExceptions(final RuntimeException exception) {
+    public ResponseEntity<ErrorResponseDto> handleCustomExceptions(final RuntimeException exception) {
         logger.error(exception.getMessage(), exception);
-        return new ResponseEntity<>(exception.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(new ErrorResponseDto(exception.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
