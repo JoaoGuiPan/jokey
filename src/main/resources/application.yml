@@ -1,0 +1,18 @@
+
+logging.level.com.jpan.jokey.service.api.JokeApiClient: DEBUG
+
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:
+        loggerLevel: full
+
+jokeapi:
+  url: https://v2.jokeapi.dev/
+  config:
+    safe: true
+    flags:
+      explicit: false
+      sexist: false

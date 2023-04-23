@@ -1,0 +1,13 @@
+
+logging.level.com.jpan.jokey.service.api.JokeApiClient: INFO
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+
+springdoc:
+  show-actuator: true
