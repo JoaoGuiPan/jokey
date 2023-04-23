@@ -1,6 +1,5 @@
 package com.jpan.jokey.service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jpan.jokey.config.JokeConfig;
 import com.jpan.jokey.exception.InvalidJokeFlagConfigException;
 import com.jpan.jokey.exception.InvalidJokeResponseException;
@@ -9,10 +8,8 @@ import com.jpan.jokey.model.JokeResponse;
 import com.jpan.jokey.service.api.JokeApiClient;
 import com.jpan.jokey.service.api.JokeUrlParameters;
 import com.jpan.jokey.service.dto.JokeDto;
-import io.micrometer.core.instrument.util.IOUtils;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
