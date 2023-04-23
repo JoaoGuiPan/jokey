@@ -32,8 +32,8 @@ public class JokeController {
         return randomJoke;
     }
 
-    @ExceptionHandler({ InvalidJokeFlagConfigException.class, InvalidJokeResponseException.class })
-    public ResponseEntity<ErrorResponseDto> handleCustomExceptions(final RuntimeException exception) {
+    @ExceptionHandler({ InvalidJokeFlagConfigException.class, InvalidJokeResponseException.class, Exception.class })
+    public ResponseEntity<ErrorResponseDto> handleCustomExceptions(final Exception exception) {
         logger.error(exception.getMessage(), exception);
         return new ResponseEntity<>(new ErrorResponseDto(exception.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
     }

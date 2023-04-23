@@ -2,7 +2,7 @@
 logging.level.com.jpan.jokey.service.api.JokeApiClient: DEBUG
 
 feign:
-  hystrix:
+  circuitbreaker:
     enabled: true
   client:
     config:
